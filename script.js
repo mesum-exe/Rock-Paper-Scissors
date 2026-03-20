@@ -89,7 +89,24 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame() {
+    console.log("This game is best out of 5 rounds with the computer. Good Luck!")
 
-playRound(humanSelection, computerSelection);
+    for (let i = 0; i < 5; i++) {
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        console.log(`Round ${i + 1}:`)
+        playRound(humanSelection, computerSelection);
+    }
+
+    if (humanScore > computerScore) {
+        console.log("CONGRATS YOU WON THE GAME! LETS PLAY AGAIN!")
+    }
+    else if (humanScore < computerScore) {
+        console.log("You LOST the game..TRY AGAIN!")
+    }
+    else {
+        console.log("You TIED with the computer! TRY AGAIN!")
+    }
+}
