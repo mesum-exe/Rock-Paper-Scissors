@@ -48,6 +48,45 @@ function playRound(humanChoice, computerChoice) {
     console.log(`Your choice: ${humanChoice}`)
     console.log(`Computer's choice: ${computerChoice}`)
 
+    if (humanChoice === "rock") {
+        if (computerChoice === "rock") {
+            console.log("You tied.")
+        }
+        else if (computerChoice === "paper") {
+            console.log("You lost... Paper beats Rock.")
+            computerScore++;
+        }
+        else if (computerChoice === "scissors") {
+            console.log("You won! Rock beats Scissors.")
+            humanScore++;
+        }
+    }
+    else if (humanChoice === "paper") {
+        if (computerChoice === "rock") {
+            console.log("You won! Paper beats Rock.")
+            humanScore++;
+        }
+        else if (computerChoice === "paper") {
+            console.log("You tied.")
+        }
+        else if (computerChoice === "scissors") {
+            console.log("You lost... Scissors beats Paper.")
+            computerScore++;
+        }       
+    }
+    else if (humanChoice === "scissors") {
+        if (computerChoice === "rock") {
+            console.log("You lost... Rock beats Scissors.")
+            computerScore++;
+        }
+        else if (computerChoice === "paper") {
+            console.log("You won! Scissors beats Paper.")
+            humanScore++;
+        }
+        else if (computerChoice === "scissors") {
+            console.log("You tied.")
+        }   
+    }
 }
 
 const humanSelection = getHumanChoice();
