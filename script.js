@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     let choice = Math.floor(Math.random()*3)
     // 0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8, 2.1, 2.4, 2.7
@@ -27,7 +30,8 @@ function getHumanChoice() {
         user_input = prompt("Enter your choice: ");
 
         // Validation
-        if (user_input !== "rock" && user_input !== "paper" && user_input !== "scissors") {
+        // Ensure user input is case-insensitive for player ease
+        if (user_input.toLowerCase() !== "rock" && user_input.toLowerCase() !== "paper" && user_input.toLowerCase() !== "scissors") {
             console.log(`Your input ("${user_input}") is wrong!`)
             console.log("Only choose between \"rock\", \"paper\", or \"scissors\"\n")
         }
@@ -36,5 +40,17 @@ function getHumanChoice() {
         }
     }
 
-    return user_input;
+    return user_input.toLowerCase();
 }
+
+function playRound(humanChoice, computerChoice) {
+
+    console.log(`Your choice: ${humanChoice}`)
+    console.log(`Computer's choice: ${computerChoice}`)
+
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
