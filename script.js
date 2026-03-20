@@ -20,5 +20,21 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
+    let user_input;
+    let flag = true;
 
+    while (flag) {
+        user_input = prompt("Enter your choice: ");
+
+        // Validation
+        if (user_input !== "rock" && user_input !== "paper" && user_input !== "scissors") {
+            console.log(`Your input ("${user_input}") is wrong!`)
+            console.log("Only choose between \"rock\", \"paper\", or \"scissors\"\n")
+        }
+        else {
+            flag = false; // Loop ends when user_input is valid
+        }
+    }
+
+    return user_input;
 }
