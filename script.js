@@ -5,18 +5,20 @@ function getComputerChoice() {
     // Equal probability for each choice
 
     if (choice === 0) {
-        console.log("rock")
+        return "rock";
     }
     else if (choice === 1) {
-        console.log("paper")
+        return "paper";
     }
     else if (choice === 2) {
-        console.log("scissors")
+        return "scissors"
     }    
     else {
         console.log("Error. Start again.")
+        return;
     }
+}
 
-    return;
+function getHumanChoice() {
 
 }
